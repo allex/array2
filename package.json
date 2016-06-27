@@ -1,0 +1,32 @@
+{
+  "name": "array2",
+  "description": "Implements a Array with Map features: get, set, unset, containsKey, size etc,.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Allex Wang",
+    "email": "allex.wxn@gmail.com",
+    "url": "http://iallex.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.iallex.com/allex/array2.git"
+  },
+  "bugs": {
+    "url": "http://git.iallex.com/allex/array2/issues"
+  },
+  "engines": [
+    "node >= 0.8.1"
+  ],
+  "main": "./lib/array-map.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "tap": "^5.7.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "bundleDependencies": [],
+  "readmeFilename": "README.md",
+  "license": "BSD-2-Clause"
+}
