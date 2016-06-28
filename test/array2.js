@@ -8,6 +8,8 @@ test('ArrayMap: push(), splice(), remove()', t => {
   arr.push.apply(arr, ['test', 'bar']);
 
   arr.splice(0, 2); // remove foo, test => bar
+
+  // add multiple elements
   arr.add([3, 4]);
   // => 'bar', 3, 4
 
@@ -15,6 +17,10 @@ test('ArrayMap: push(), splice(), remove()', t => {
 
   arr.remove('bar')
   t.same(arr.values(), [3, 4])
+
+  // add k/v mapping
+  arr.add({k1: 'v1', k2: 'v2'});
+  t.same(arr.values(), [3, 4, 'v1', 'v2'])
 
   t.end();
 });
