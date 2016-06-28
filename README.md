@@ -32,7 +32,7 @@ console.log(':8 =>', arr.get(8))
 console.log('keys =>', arr.keys())
 console.log('values =>', arr.values())
 
-console.log('===== test ArrayMap with cutomize key identify ====');
+console.log('===== test ArrayMap with a custom primary key ====');
 
 var arr2 = new ArrayMap([
     {id: 1, v: 100},
@@ -54,5 +54,13 @@ console.log('values =>', arr2.values())
 console.log('unset(7)')
 arr2.unset(7)
 console.log('containsKey(7) =>', arr2.containsKey(7));
+
+console.log('===== test ArrayMap with a fixed length ====');
+
+var arr3 = new ArrayMap([1, 2, 3, 4], {maxSize: 3})
+console.log('keys =>', arr2.keys()) // => 2, 3, 4
+
+arr3.set('foo', 'foo_value');
+console.log('values=>', arr2.values()) // 3, 4, foo_value
 ```
 
