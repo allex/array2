@@ -1,7 +1,7 @@
 {
   "name": "array2",
   "description": "Implements a Array with Map features: get, set, unset, containsKey, size etc,.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Allex Wang",
     "email": "allex.wxn@gmail.com",
