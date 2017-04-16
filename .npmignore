@@ -1,5 +1,12 @@
+.git
 .DS_Store
-/node_modules
-/.lintcache
-/npm-debug.log
+.idea
+.babelrc
+.npmignore
+*.lock
+*.tgz
+node_modules
+src
+coverage
 test
+npm-debug.log

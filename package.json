@@ -1,7 +1,7 @@
 {
   "name": "array2",
   "description": "Implements a Array with Map features: get, set, unset, containsKey, size etc,.",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "author": {
     "name": "Allex Wang",
     "email": "allex.wxn@gmail.com",
@@ -22,10 +22,19 @@
   "devDependencies": {
     "tap": "^5.7.0"
   },
+  "bundleDependencies": [],
   "scripts": {
+    "build": "coffee -o lib/ src/",
+    "watch": "coffee -w -o lib/ src/",
+    "prepublish": "npm run build",
     "test": "tap test/*.js"
   },
-  "bundleDependencies": [],
+  "maintainers": [
+    {
+      "name": "allex",
+      "email": "allex.wxn@gmail.com"
+    }
+  ],
   "readmeFilename": "README.md",
   "license": "BSD-2-Clause"
 }

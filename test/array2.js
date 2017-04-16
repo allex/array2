@@ -1,5 +1,5 @@
 var test = require('tap').test
-  , ArrayMap = require('../').ArrayMap
+  , ArrayMap = require('../')
 
 test('ArrayMap: push(), splice(), remove()', t => {
   var arr = new ArrayMap

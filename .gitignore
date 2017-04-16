@@ -57,7 +57,6 @@ npm-debug.log
 
 .*-cache
 .project
-.editorconfig
 *.bak
-test/
 t/
+lib/
