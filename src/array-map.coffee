@@ -171,9 +171,10 @@ extend __proto__,
 
   eachKey: (fn, scope) ->
     i = 0
-    len = @_k.length
+    keys = @_k
+    len = keys.length
     while i < len
-      fn.call scope, @_k[i][0], @_l[i], i, len
+      fn.call scope, keys[i][0], keys[i], i, len
       i++
     this
 
@@ -263,6 +264,30 @@ extend __proto__,
 
   indexOf: (o) -> @_l.indexOf o
 
+  ###*
+  # Iterates over elements of `collection` invoking `iteratee` for each element.
+  # The iteratee is invoked with four arguments: (value, key, index, collection).
+  # Iteratee functions may exit iteration early by explicitly returning `false`.
+  #
+  # @method each
+  # @return {ArrayMap} Returns self for chains programing.
+  ###
+  each: (fn, scope) ->
+    i = 0
+    list = [].concat @_k
+    len = list.length
+    while i < len
+      item = list[i]
+      if fn.call(scope or item, item[1], item[0], i, this) is false
+        break
+      i++
+    this
+
+  ###
+  # Array native @forEach implements.
+  #
+  # @method forEach
+  ###
   forEach: (fn, scope) ->
     i = 0
     items = [].concat(@_l)
@@ -278,7 +303,7 @@ extend __proto__,
     items = @_l
     len = items.length
     while i < len
-      if fn.call(scope, items[i], @_k[i])
+      if fn.call scope, items[i], @_k[i]
         return items[i]
       i++
     undefined
